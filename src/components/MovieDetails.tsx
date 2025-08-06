@@ -9,7 +9,7 @@ interface MovieDetailsProps {
 }
 
 const MovieDetails: React.FC<MovieDetailsProps> = ({ imdbID, onClose }) => {
-  
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [movie, setMovie] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -88,7 +88,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ imdbID, onClose }) => {
           </button>
         )}
         <div className="flex flex-col md:flex-row gap-6 h-full">
-          <Image
+          <img
             src={
               movie.Poster && movie.Poster !== "N/A"
                 ? movie.Poster
