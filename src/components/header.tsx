@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { SITE_NAME, LOGO_URL, NAV_LINKS } from "@/constants/constants";
+import Image from "next/image";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ const Header = () => {
     <header className="w-full bg-black/95 shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-5">
         <Link href="/" className="flex items-center cursor-pointer">
-          <img src={LOGO_URL} alt="Logo" className="h-10 w-10 mr-4" />
+          <Image src={LOGO_URL} alt="Logo" className="h-10 w-10 mr-4" />
           <span className="font-bold text-lg md:text-2xl text-white pt-2 tracking-wide drop-shadow">
             {SITE_NAME}
           </span>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface Movie {
   imdbID: string;
@@ -21,7 +22,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
       className="bg-white/10 backdrop-blur-md rounded-lg shadow-md p-4 flex flex-col items-start transition-transform duration-300 hover:scale-105 hover:z-20 relative"
       style={{ willChange: 'transform' }}
     >
-      <img
+      <Image
         src={movie.Poster && movie.Poster !== 'N/A' ? movie.Poster : placeholderPoster}
         alt={movie.Title}
         className="w-full h-70 object-fill rounded mb-3 border border-black/20"

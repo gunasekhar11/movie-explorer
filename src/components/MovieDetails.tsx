@@ -1,6 +1,7 @@
 "use client";
 import { API_KEY, END_POINT } from "@/constants/constants";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface MovieDetailsProps {
   imdbID: string;
@@ -8,6 +9,8 @@ interface MovieDetailsProps {
 }
 
 const MovieDetails: React.FC<MovieDetailsProps> = ({ imdbID, onClose }) => {
+  
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [movie, setMovie] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -85,7 +88,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ imdbID, onClose }) => {
           </button>
         )}
         <div className="flex flex-col md:flex-row gap-6 h-full">
-          <img
+          <Image
             src={
               movie.Poster && movie.Poster !== "N/A"
                 ? movie.Poster
